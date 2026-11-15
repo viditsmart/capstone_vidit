@@ -1,42 +1,42 @@
-export default function Home() {
+'use client'
+
+import Link from 'next/link'
+
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-zinc-50 px-6 py-12 text-zinc-900 dark:bg-black dark:text-zinc-50">
-      <section className="w-full max-w-2xl rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
-        <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
-          Capstone Project
-        </p>
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-          Build a better homepage.
-        </h1>
-        <p className="mt-4 max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-300">
-          This page was cleaned up from the default Next.js starter so it renders
-          without depending on generated template assets or broken starter links.
-        </p>
-
-        <div className="mt-8 flex flex-wrap gap-4">
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
-          >
-            Get Started
-          </a>
-          <a
-            href="#details"
-            className="inline-flex items-center justify-center rounded-full border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-700 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-900"
-          >
-            View Details
-          </a>
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-6">
+      <div className="w-full max-w-lg bg-slate-900 border border-slate-800 rounded-xl p-8 shadow-2xl text-center space-y-6">
+        
+        {/* Title & Tagline */}
+        <div>
+          <h1 className="text-3xl font-extrabold text-emerald-400 tracking-tight">Loot Drop Fitness</h1>
+          <p className="text-sm text-slate-400 mt-2">
+            Turn your real-world workouts, gym sessions, and cycling rides into an RPG progression system.
+          </p>
         </div>
 
-        <div id="details" className="mt-8 border-t border-zinc-200 pt-6 dark:border-zinc-800">
-          <h2 className="text-lg font-semibold">What changed</h2>
-          <ul className="mt-3 space-y-2 text-sm text-zinc-600 dark:text-zinc-300">
-            <li>• Removed unused starter assets and default Next.js image imports.</li>
-            <li>• Simplified the component structure to a valid, semantic page layout.</li>
-            <li>• Kept all styling inside valid Tailwind utility classes.</li>
-          </ul>
+        {/* Navigation Actions */}
+        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          <Link
+            href="/login"
+            className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold py-3 px-4 rounded-lg transition-colors text-center shadow-lg"
+          >
+            Log In / Sign Up
+          </Link>
+          <Link
+            href="/dashboard"
+            className="flex-1 bg-slate-800 hover:bg-slate-700 text-emerald-400 font-bold py-3 px-4 rounded-lg transition-colors border border-emerald-500/30 text-center"
+          >
+            Player Dashboard
+          </Link>
         </div>
-      </section>
-    </main>
-  );
+
+        {/* Quick status footer */}
+        <div className="text-xs text-slate-500 pt-4 border-t border-slate-800">
+          Status: Next.js App Router & Supabase Connected 🚀
+        </div>
+
+      </div>
+    </div>
+  )
 }
